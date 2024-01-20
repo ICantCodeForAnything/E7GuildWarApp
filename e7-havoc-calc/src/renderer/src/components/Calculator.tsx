@@ -1,17 +1,14 @@
-import { Button, Modal, SimpleGrid, Stack, Text } from "@mantine/core";
+import { Button, SimpleGrid, Stack, Text } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { formValidateRules, initialFormValues } from "./Constants";
 import { calcMaxHavoc } from "./Functions";
-import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 import GuildInfoForm from "./GuildInfoForm";
 
 
 function Calculator(): JSX.Element {
-
-    const [opened, { open, close }] = useDisclosure(false);
-    const [yourMaxHavoc, setYourMaxHavoc] = useState<number>(0);
-    const [enemyMaxHavoc, setEnemyMaxHavoc] = useState<number>(0);
+    const [yourMaxHavoc, setYourMaxHavoc] = useState<number | undefined>(undefined);
+    const [enemyMaxHavoc, setEnemyMaxHavoc] = useState<number | undefined>(undefined);
     const yourGuildForm = useForm({
         initialValues: initialFormValues,
         validate: formValidateRules
@@ -53,28 +50,22 @@ function Calculator(): JSX.Element {
         setYourMaxHavoc(calcMaxHavoc(calcOurHavocInfo))
         setEnemyMaxHavoc(calcMaxHavoc(calcTheirHavocInfo))
 
-        //TODO: Render the result
-        open()
     }
 
     return (
     <Stack w='80%' pt='20px'>
-    <Modal opened={opened} onClose={close} title="Havoc Result">
-        {<Stack>
-            <Text>
-                Your Max Havoc: {yourMaxHavoc}
-            </Text>
-            <Text>
-                Enemy Max Havoc: {enemyMaxHavoc}    
-            </Text>
-        </Stack>}
-    </Modal>
         <SimpleGrid cols={2} spacing={'xl'}>
             <Stack align='center'>
                 <GuildInfoForm title='Your Guild' formProps={yourGuildForm}/>
+                <Text>
+                Your Max Havoc: {yourMaxHavoc}
+                </Text>
             </Stack>
             <Stack align='center'>
                 <GuildInfoForm title='Enemy Guild' formProps={enemyGuildForm}/>
+                <Text>
+                Enemy Max Havoc: {enemyMaxHavoc}    
+                </Text>
             </Stack>
         </SimpleGrid>
         <Stack align='center' p='xl'>

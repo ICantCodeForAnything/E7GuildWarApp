@@ -1,4 +1,4 @@
-import { Text, Stack, NumberInput, Box } from "@mantine/core"
+import { Text, NumberInput, Box, SimpleGrid } from "@mantine/core"
 
 const formOrder = ['havoc', 'numTokens', 'sh', 'fort1', 'fort2', 'fort3', '_200hpTowers', '_80hpTowers', '_20hpTowers']
 
@@ -19,7 +19,7 @@ function GuildInfoForm({title, formProps}): JSX.Element {
         <Text>
             {title}
         </Text>
-        <Stack>
+        <SimpleGrid cols={2}>
             {
                 formOrder.map((key) => 
                     <NumberInput
@@ -33,7 +33,7 @@ function GuildInfoForm({title, formProps}): JSX.Element {
                 )
             }
             
-        </Stack>
+        </SimpleGrid>
     </Box>
 }
 
