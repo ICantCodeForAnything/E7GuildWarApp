@@ -1,4 +1,4 @@
-appId: com.electron.app
+appId: com.e7-havoc-calc.app
 productName: e7-havoc-calc
 directories:
   buildResources: build
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: e7-havoc-calc
+  executableName: E7 Havoc Calc
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
@@ -38,6 +38,3 @@ linux:
 appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
-publish:
-  provider: generic
-  url: https://example.com/auto-updates

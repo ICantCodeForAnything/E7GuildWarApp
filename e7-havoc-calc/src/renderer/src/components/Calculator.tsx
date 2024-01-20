@@ -1,10 +1,10 @@
 import { Button, Modal, SimpleGrid, Stack, Text } from "@mantine/core";
-import GuildInfoForm from "./GuildInfoForm";
 import { useForm } from "@mantine/form";
 import { formValidateRules, initialFormValues } from "./Constants";
 import { calcMaxHavoc } from "./Functions";
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
+import GuildInfoForm from "./GuildInfoForm";
 
 
 function Calculator(): JSX.Element {

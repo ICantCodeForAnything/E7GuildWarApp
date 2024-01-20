@@ -1,5 +1,4 @@
 import { Text, Stack, NumberInput, Box } from "@mantine/core"
-import { GuildInfoFormProps } from "./types"
 
 const formOrder = ['havoc', 'numTokens', 'sh', 'fort1', 'fort2', 'fort3', '_200hpTowers', '_80hpTowers', '_20hpTowers']
 
