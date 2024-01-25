@@ -7,7 +7,6 @@ import { useState } from "react";
 
 function Scout(): JSX.Element {
     const [name, setName] = useState<string>('')
-
     const t1Form = useForm({
         initialValues: initialFormValues,
         validate: formValidateRules
@@ -31,7 +30,7 @@ function Scout(): JSX.Element {
                     </Tabs.Tab>
                     <Tabs.Tab value="Report" >
                     Report
-                    </Tabs.Tab>
+                    </Tabs.Tab> 
                 </Tabs.List>
 
                 <Tabs.Panel value="T1">
@@ -42,8 +41,8 @@ function Scout(): JSX.Element {
                     <ScoutForm formProps={t2Form}/>
                 </Tabs.Panel>
 
-                <Tabs.Panel value="Report">
-                    <Report form1={t1Form} form2={t2Form} />
+                <Tabs.Panel value="Report" h='100%'>
+                    <Report form1={t1Form} form2={t2Form} name={name}/>
                 </Tabs.Panel>
                 </Tabs>
         </Stack>

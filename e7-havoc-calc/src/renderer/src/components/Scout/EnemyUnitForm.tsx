@@ -32,27 +32,27 @@ function EnemyUnitForm({number, formProps}): JSX.Element {
             <Grid.Col span={3}>
                 <Group>
                     <Group gap='xs'>
-                        <Checkbox{...formProps.getInputProps('yourUnit.speedDown', {type: 'checkbox'})} />
+                        <Checkbox{...formProps.getInputProps(`enemyUnit${number}.outspeed`, {type: 'checkbox'})} />
                         Outspeed?
                     </Group>
                     <Group gap='xs'>
-                        <Checkbox{...formProps.getInputProps('yourUnit.speedDown', {type: 'checkbox'})} />
+                        <Checkbox{...formProps.getInputProps(`enemyUnit${number}.immunity`, {type: 'checkbox'})} />
                         <Image src={Immunity}/>
                     </Group>
                     <Group gap='xs'>
-                        <Checkbox{...formProps.getInputProps('yourUnit.speedDown', {type: 'checkbox'})} />
+                        <Checkbox{...formProps.getInputProps(`enemyUnit${number}.protection`, {type: 'checkbox'})} />
                         <Image src={Protection}/>
                     </Group>
                     <Group gap='xs'>
-                        <Checkbox{...formProps.getInputProps('yourUnit.speedDown', {type: 'checkbox'})} />
+                        <Checkbox{...formProps.getInputProps(`enemyUnit${number}.counter`, {type: 'checkbox'})} />
                         <Image src={Counter}/>
                     </Group>
                     <Group gap='xs'>
-                        <Checkbox{...formProps.getInputProps('yourUnit.speedDown', {type: 'checkbox'})} />
+                        <Checkbox{...formProps.getInputProps(`enemyUnit${number}.lifesteal`, {type: 'checkbox'})} />
                         <Image src={Lifesteal}/>
                     </Group>
                     <Group gap='xs'>
-                        <Checkbox{...formProps.getInputProps('yourUnit.speedDown', {type: 'checkbox'})} />
+                        <Checkbox{...formProps.getInputProps(`enemyUnit${number}.injury`, {type: 'checkbox'})} />
                         <Image src={Injury}/>
                     </Group>
                 </Group>

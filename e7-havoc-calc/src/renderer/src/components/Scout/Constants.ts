@@ -10,13 +10,14 @@ export type TScoutUnitForm = {
 export type TEnemyUnitForm = {
     name: string,
     artifact: string,
-    hp: number,
-    cr: number,
+    hp: number | undefined,
+    cr: number | undefined,
     outspeed: boolean,
     immunity: boolean,
     counter: boolean,
     lifesteal: boolean,
-    injury: boolean
+    injury: boolean,
+    protection: boolean,
 }
 
 const defaultScoutForm: TScoutUnitForm = {
@@ -31,13 +32,14 @@ const defaultScoutForm: TScoutUnitForm = {
 const defaultEnemyUnitForm: TEnemyUnitForm = {
     name: '',
     artifact: '',
-    hp: 0,
-    cr: 0,
+    hp: undefined,
+    cr: undefined,
     outspeed: false,
     immunity: false,
     counter: false,
     lifesteal: false,
-    injury: false
+    injury: false,
+    protection: false,
 }
 
 export const initialFormValues: {

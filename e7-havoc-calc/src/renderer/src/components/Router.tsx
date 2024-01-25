@@ -1,6 +1,6 @@
 import { usePageContext } from "@renderer/ContextProviders/PageContext"
 import { Text } from "@mantine/core"
-import Scout from "./Scout/Scout.1"
+import Scout from "./Scout/Scout"
 import Calculator from "./Havoc Calculator/Calculator"
 
 function Router(): JSX.Element {

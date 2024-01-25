@@ -1,21 +1,21 @@
-import { Group, Stack, Textarea, UnstyledButton } from "@mantine/core";
+import { Group, Stack, Textarea, Button } from "@mantine/core";
+import { FormatReport } from "./Functions";
 
-function Report(form1, form2): JSX.Element {
+function Report({form1, form2, name}): JSX.Element {
     return (
-        <Stack>
-            <Group>
-                <UnstyledButton>
+        <Stack w='100%' h='100%' p='md'>
+            <Group justify='flex-end'>
+                <Button variant='default'>
                     Reset form
-                </UnstyledButton>
-                <UnstyledButton>
+                </Button>
+                <Button variant='default'>
                     Copy text to clipboard
-                </UnstyledButton>
-                <UnstyledButton>
+                </Button>
+                <Button variant='default'>
                     Copy text to clipboard (Single line)
-                </UnstyledButton>
+                </Button>
             </Group>
-            <Textarea>
-            </Textarea>
+            <Textarea w='100%' minRows={6} autosize value={FormatReport(form1, form2, name)}/>
         </Stack>
     )
 }
