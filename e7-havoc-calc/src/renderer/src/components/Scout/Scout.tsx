@@ -2,6 +2,7 @@ import { Stack, Tabs, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { formValidateRules, initialFormValues } from "./Constants";
 import ScoutForm from "./ScoutForm";
+import Report from "./Report"
 import { useState } from "react";
 
 function Scout(): JSX.Element {
@@ -42,7 +43,7 @@ function Scout(): JSX.Element {
                 </Tabs.Panel>
 
                 <Tabs.Panel value="Report">
-                    Report
+                    <Report form1={t1Form} form2={t2Form} />
                 </Tabs.Panel>
                 </Tabs>
         </Stack>
