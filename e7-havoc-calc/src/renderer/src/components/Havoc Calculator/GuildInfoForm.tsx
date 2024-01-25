@@ -1,5 +1,4 @@
 import { Text, NumberInput, Box, SimpleGrid } from "@mantine/core"
-import { UseFormReturnType } from "@mantine/form"
 
 const formOrder = ['havoc', 'numTokens', 'sh', 'fort1', 'fort2', 'fort3', '_200hpTowers', '_140hpTowers', '_80hpTowers', '_20hpTowers']
 

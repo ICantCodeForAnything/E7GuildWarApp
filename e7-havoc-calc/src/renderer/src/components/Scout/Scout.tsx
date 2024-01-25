@@ -18,7 +18,7 @@ function Scout(): JSX.Element {
     });
 
     return (
-        <Stack w='80%' pt='md'>
+        <Stack w='80%' h='70%' pt='md'>
             <TextInput placeholder='Name of the tower or player...' w='100%' onChange={(event) => setName(event.currentTarget.value)}/>
             <Tabs defaultValue="T1" variant='outline'>
                 <Tabs.List>

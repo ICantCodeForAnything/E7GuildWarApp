@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css'
 import { AppShell, Stack, Group, Text, Button } from '@mantine/core';
 import { ToggleThemeButton } from './components/Navbar Components/ToggleTheme'; 
 import HelpButton from './components/Navbar Components/HelpButton';
@@ -10,7 +11,7 @@ function App(): JSX.Element {
   const { setPage } = usePageContext();
 
   return (
-    <AppShell header={{ height: 60 }} p='md'>
+    <AppShell header={{ height: 60 }}>
       <AppShell.Header pl='md'>
         <Group align='center' h='100%' p='md' w='100%' justify='space-between'>
           <Group>
@@ -41,7 +42,7 @@ function App(): JSX.Element {
         </Stack>
       </AppShell.Navbar>
       <AppShell.Main pl='130'>
-        <Stack align='center' w='100%'>
+        <Stack align='center' w='100%' pt='md'>
           <Router/>
         </Stack>
       </AppShell.Main>
