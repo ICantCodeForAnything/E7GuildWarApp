@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Stack, Text } from "@mantine/core";
+import { Button, SimpleGrid, Stack, Text, useMantineTheme } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { formValidateRules, initialFormValues } from "./Constants";
 import { calcMaxHavoc } from "./Functions";
@@ -37,14 +37,14 @@ function Calculator(): JSX.Element {
         // Now we want our havoc and tokens, but their tower info so we need to do some mixing
         const calcOurHavocInfo = {
             ...(({ havoc, numTokens }) => ({ havoc, numTokens }))(yourGuildInfo),
-            ...(({ sh, fort1, fort2, fort3, _200hpTowers, _80hpTowers, _20hpTowers}) => 
-                ({ sh, fort1, fort2, fort3, _200hpTowers, _80hpTowers, _20hpTowers}))(enemyGuildInfo)
+            ...(({ sh, fort1, fort2, fort3, _200hpTowers, _140hpTowers, _80hpTowers, _20hpTowers}) => 
+                ({ sh, fort1, fort2, fort3, _200hpTowers, _140hpTowers, _80hpTowers, _20hpTowers}))(enemyGuildInfo)
         }
 
         const calcTheirHavocInfo = {
             ...(({ havoc, numTokens }) => ({ havoc, numTokens }))(enemyGuildInfo),
-            ...(({ sh, fort1, fort2, fort3, _200hpTowers, _80hpTowers, _20hpTowers}) => 
-                ({ sh, fort1, fort2, fort3, _200hpTowers, _80hpTowers, _20hpTowers}))(yourGuildInfo)
+            ...(({ sh, fort1, fort2, fort3, _200hpTowers, _140hpTowers, _80hpTowers, _20hpTowers}) => 
+                ({ sh, fort1, fort2, fort3, _200hpTowers, _140hpTowers, _80hpTowers, _20hpTowers}))(yourGuildInfo)
         }
 
         setYourMaxHavoc(calcMaxHavoc(calcOurHavocInfo))
@@ -53,8 +53,8 @@ function Calculator(): JSX.Element {
     }
 
     return (
-    <Stack w='80%' pt='20px'>
-        <SimpleGrid cols={2} spacing={'xl'}>
+    <Stack w='100%' pt='20px' align='center'>
+        <SimpleGrid cols={2} spacing={50}>
             <Stack align='center'>
                 <GuildInfoForm title='Your Guild' formProps={yourGuildForm}/>
                 <Text>

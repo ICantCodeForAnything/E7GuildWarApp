@@ -1,33 +1,45 @@
 import '@mantine/core/styles.css';
-import { MantineProvider, AppShell, Stack, Group, Text } from '@mantine/core';
-import Calculator from './components/Calculator';
+import { AppShell, Stack, Group, Text, UnstyledButton } from '@mantine/core';
 import { ToggleThemeButton } from './components/Navbar Components/ToggleTheme'; 
 import HelpButton from './components/Navbar Components/HelpButton';
+import Router from './components/Router';
+import { usePageContext } from './ContextProviders/PageContext';
 
 function App(): JSX.Element {
+
+  const { setPage } = usePageContext();
+
   return (
-    <MantineProvider defaultColorScheme='dark'>
-      <AppShell header={{ height: 60 }} p='md'>
-        <AppShell.Header>
-          <Group align='center' h='100%' p='md' w='100%' justify='space-between'>
-            <Group>
-              <Text fz='xl' fw='700'>
-                E7 Guild War Havoc Calculator
-              </Text>
-            </Group>
-            <Group justify='flex-end' maw='20%'>
-              <HelpButton />
-              <ToggleThemeButton/>
-            </Group>
+    <AppShell header={{ height: 60 }} p='md'>
+      <AppShell.Header>
+        <Group align='center' h='100%' p='md' w='100%' justify='space-between'>
+          <Group>
+            <Text fz='xl' fw='700'>
+              E7 Guild War App
+            </Text>
           </Group>
-        </AppShell.Header>
-        <AppShell.Main>
-          <Stack align='center'>
-            <Calculator/>
-          </Stack>
-        </AppShell.Main>
-      </AppShell>
-    </MantineProvider>
+          <Group justify='flex-end' maw='20%'>
+            <HelpButton />
+            <ToggleThemeButton/>
+          </Group>
+        </Group>
+      </AppShell.Header>
+      <AppShell.Navbar p="md">
+        <Stack>
+          <UnstyledButton onClick={() => setPage('scout')}>
+            Scout Form
+          </UnstyledButton>
+          <UnstyledButton onClick={() => setPage('calc')}>
+            Havoc Calculator
+          </UnstyledButton>
+        </Stack>
+      </AppShell.Navbar>
+      <AppShell.Main>
+        <Stack align='center'>
+          <Router/>
+        </Stack>
+      </AppShell.Main>
+    </AppShell>
   ) 
 }
 

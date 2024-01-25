@@ -6,6 +6,7 @@ export const initialFormValues: {[field: string]: number} = {
     fort3: 0,
     sh: 0,
     _200hpTowers: 0,
+    _140hpTowers: 0,
     _80hpTowers: 0,
     _20hpTowers: 0,
 }
@@ -22,6 +23,7 @@ export const formValidateRules: {[field: string]: (value: any) => string | null}
     fort3: validateNum,
     sh: validateNum,
     _200hpTowers: validateNum,
+    _140hpTowers: validateNum,
     _80hpTowers: validateNum,
     _20hpTowers: validateNum
 }

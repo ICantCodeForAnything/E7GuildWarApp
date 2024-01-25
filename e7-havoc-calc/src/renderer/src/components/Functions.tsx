@@ -1,3 +1,4 @@
+import assert from "assert";
 import { MAX_DAMAGE_PER_ATTACK, DOWN_HAVOC_BONUS } from "./Constants";
 
 /**
@@ -33,6 +34,7 @@ export function calcMaxHavoc(guildInfo: {[field: string]: number}): number {
    while (currentTokens > 0) {
         let sh_hp = guildInfo['sh']
         let _200hpTowers = guildInfo['_200hpTowers']
+        let _140hpTowers = guildInfo['_140hpTowers']
         let _80hpTowers = guildInfo['_80hpTowers']
         let _20hpTowers = guildInfo['_20hpTowers']
         let remaining_forts = [guildInfo['fort1'], guildInfo['fort2'], guildInfo['fort3']].filter(x => x > 0)
@@ -102,6 +104,24 @@ export function calcMaxHavoc(guildInfo: {[field: string]: number}): number {
             currentHavoc = newHavoc
             currentTokens = remainingTokens
             _20hpTowers -= 1
+        }
+
+        //Priority 7: 140HP towers
+        while (_140hpTowers > 0 && Math.floor(currentTokens / 2) > 0) {
+            let [_, newHavoc, remainingTokens] = attack(140, currentTokens, currentHavoc, 'tower')
+            currentHavoc = newHavoc
+            currentTokens = remainingTokens
+            _140hpTowers -= 1
+        }
+
+        // Perhaps if we had an odd number of tokens and only 140 hp towers left
+        if (currentTokens > 0 && _140hpTowers > 0) {
+            assert(currentTokens == 1, "We somehow had left over towers and more than 1 token")
+            currentTokens -= 1
+            currentHavoc += 120
+            // Not needed but for bookkeeping maybe?
+            _140hpTowers -= 1
+            _20hpTowers += 1
         }
 
         // Well if we reach here, we either ran out of tokens, or ran out of attack targets
