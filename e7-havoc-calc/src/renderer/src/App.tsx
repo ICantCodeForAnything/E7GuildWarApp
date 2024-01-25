@@ -1,5 +1,5 @@
 import '@mantine/core/styles.css';
-import { AppShell, Stack, Group, Text, UnstyledButton } from '@mantine/core';
+import { AppShell, Stack, Group, Text, Button } from '@mantine/core';
 import { ToggleThemeButton } from './components/Navbar Components/ToggleTheme'; 
 import HelpButton from './components/Navbar Components/HelpButton';
 import Router from './components/Router';
@@ -11,7 +11,7 @@ function App(): JSX.Element {
 
   return (
     <AppShell header={{ height: 60 }} p='md'>
-      <AppShell.Header>
+      <AppShell.Header pl='md'>
         <Group align='center' h='100%' p='md' w='100%' justify='space-between'>
           <Group>
             <Text fz='xl' fw='700'>
@@ -24,18 +24,24 @@ function App(): JSX.Element {
           </Group>
         </Group>
       </AppShell.Header>
-      <AppShell.Navbar p="md">
+      <AppShell.Navbar p='md'>
         <Stack>
-          <UnstyledButton onClick={() => setPage('scout')}>
+          <Button
+            variant='default' 
+            size='compact-l'
+            onClick={() => setPage('scout')}>
             Scout Form
-          </UnstyledButton>
-          <UnstyledButton onClick={() => setPage('calc')}>
+          </Button>
+          <Button
+            variant='default'  
+            size='compact-l'
+            onClick={() => setPage('calc')}>
             Havoc Calculator
-          </UnstyledButton>
+          </Button>
         </Stack>
       </AppShell.Navbar>
-      <AppShell.Main>
-        <Stack align='center'>
+      <AppShell.Main pl='130'>
+        <Stack align='center' w='100%'>
           <Router/>
         </Stack>
       </AppShell.Main>

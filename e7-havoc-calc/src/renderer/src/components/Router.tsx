@@ -1,7 +1,7 @@
 import { usePageContext } from "@renderer/ContextProviders/PageContext"
 import { Text } from "@mantine/core"
-import Scout from "./Scout"
-import Calculator from "./Calculator"
+import Scout from "./Scout/Scout"
+import Calculator from "./Havoc Calculator/Calculator"
 
 function Router(): JSX.Element {
     const { page } = usePageContext()
@@ -9,7 +9,6 @@ function Router(): JSX.Element {
     switch (page) {
         case 'scout':
             return <Scout/>
-    
         case 'calc':
             return <Calculator/>
         default:
