@@ -1,5 +1,5 @@
-appId: com.e7-havoc-calc.app
-productName: e7-havoc-calc
+appId: com.e7-guild-war.app
+productName: E7GuildWar
 directories:
   buildResources: build
 files:
@@ -12,7 +12,7 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: E7 Havoc Calc
+  executableName: E7 Guild War
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
