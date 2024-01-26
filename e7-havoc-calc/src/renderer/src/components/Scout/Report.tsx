@@ -1,12 +1,16 @@
 import { Group, Stack, Textarea, Button, CopyButton } from "@mantine/core";
 import { FormatReport } from "./Functions";
 import { notifications } from '@mantine/notifications';
-function Report({form1, form2, name}): JSX.Element {
+function Report({form1, form2, name, setName}): JSX.Element {
     const text: string = FormatReport(form1, form2, name)
     return (
         <Stack w='100%' h='100%' p='md'>
             <Group justify='flex-end'>
-                <Button variant='default'>
+                <Button variant='default' onClick={() => {
+                    form1.reset();
+                    form2.reset();
+                    setName('');
+                }}>
                     Reset form
                 </Button>
                 <CopyButton value={text}>

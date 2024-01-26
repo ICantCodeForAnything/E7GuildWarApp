@@ -1,6 +1,6 @@
 {
   "name": "e7-havoc-calc",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An E7 Guild War Tool",
   "main": "./out/main/index.js",
   "author": "Suga",

@@ -19,7 +19,7 @@ function Scout(): JSX.Element {
 
     return (
         <Stack w='80%' h='70%' pt='md'>
-            <TextInput placeholder='Name of the tower or player...' w='100%' onChange={(event) => setName(event.currentTarget.value)}/>
+            <TextInput placeholder='Name of the tower or player...' w='100%' value={name} onChange={(event) => setName(event.currentTarget.value)}/>
             <Tabs defaultValue="T1" variant='outline'>
                 <Tabs.List>
                     <Tabs.Tab value="T1" >
@@ -42,7 +42,7 @@ function Scout(): JSX.Element {
                 </Tabs.Panel>
 
                 <Tabs.Panel value="Report" h='100%'>
-                    <Report form1={t1Form} form2={t2Form} name={name}/>
+                    <Report form1={t1Form} form2={t2Form} name={name} setName={setName}/>
                 </Tabs.Panel>
                 </Tabs>
         </Stack>

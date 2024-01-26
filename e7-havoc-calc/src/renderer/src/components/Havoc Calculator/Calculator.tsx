@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Stack, Text, useMantineTheme } from "@mantine/core";
+import { Button, SimpleGrid, Stack, Text } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { formValidateRules, initialFormValues } from "./Constants";
 import { calcMaxHavoc } from "./Functions";
@@ -60,11 +60,17 @@ function Calculator(): JSX.Element {
                 <Text>
                 Your Max Havoc: {yourMaxHavoc}
                 </Text>
+                <Text>
+                    Your Max War Season Point: {Math.floor((yourMaxHavoc || 0) / 200) + 100}
+                </Text>
             </Stack>
             <Stack align='center'>
                 <GuildInfoForm title='Enemy Guild' formProps={enemyGuildForm}/>
                 <Text>
                 Enemy Max Havoc: {enemyMaxHavoc}    
+                </Text>
+                <Text>
+                    Enemy Max War Season Point: {Math.floor((enemyMaxHavoc || 0) / 200) + 100}
                 </Text>
             </Stack>
         </SimpleGrid>
