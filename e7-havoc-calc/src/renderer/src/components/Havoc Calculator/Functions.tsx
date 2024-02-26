@@ -1,4 +1,3 @@
-import assert from "assert";
 import { MAX_DAMAGE_PER_ATTACK, DOWN_HAVOC_BONUS } from "./Constants";
 
 /**
@@ -116,7 +115,6 @@ export function calcMaxHavoc(guildInfo: {[field: string]: number}): number {
 
         // Perhaps if we had an odd number of tokens and only 140 hp towers left
         if (currentTokens > 0 && _140hpTowers > 0) {
-            assert(currentTokens == 1, "We somehow had left over towers and more than 1 token")
             currentTokens -= 1
             currentHavoc += 120
             // Not needed but for bookkeeping maybe?
