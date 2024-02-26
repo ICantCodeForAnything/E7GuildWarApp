@@ -1,9 +1,9 @@
 import { Checkbox, Grid, Group, NumberInput, TextInput, Image } from "@mantine/core";
-import Injury from '../../assets/Injury.png'
-import Counter from '../../assets/Counter.png'
-import Lifesteal from '../../assets/Lifesteal.png'
-import Protection from '../../assets/Protection.png'
-import Immunity from '../../assets/Immunity.png'
+import Injury from '../../assets/injury.png'
+import Counter from '../../assets/counter.png'
+import Lifesteal from '../../assets/lifesteal.png'
+import Protection from '../../assets/protection.png'
+import Immunity from '../../assets/immunity.png'
 
 const getDisplayText = {
     "1": "First",

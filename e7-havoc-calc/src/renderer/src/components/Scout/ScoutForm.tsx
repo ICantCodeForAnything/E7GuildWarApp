@@ -1,5 +1,5 @@
 import { Stack, Group, Divider, TextInput, Grid, Checkbox, Image, NumberInput } from "@mantine/core";
-import SpeedDown from '../../assets/Speed_down.png'
+import SpeedDown from '../../assets/speed_down.png'
 import EnemyUnitForm from "./EnemyUnitForm";
 
 function ScoutForm({formProps}): JSX.Element {
